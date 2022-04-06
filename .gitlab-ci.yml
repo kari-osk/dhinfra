@@ -1,0 +1,9 @@
+stages:
+    - build
+    - test
+
+  build_job:
+    stage: build
+    script: 
+    - echo "Maven compile started"
+    - "mvn compile"

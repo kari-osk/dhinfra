@@ -1,0 +1,9 @@
+stages:
+  - build
+  - test
+
+build-job:
+  stage: build
+  script:
+    - echo "Compiling the code"
+    - "nvn compile"
