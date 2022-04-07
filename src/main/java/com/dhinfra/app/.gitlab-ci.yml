@@ -7,3 +7,8 @@ build-job:
   script:
     - echo "Compiling the code"
     - "nvn compile"
+
+test-job:
+  stage: test
+  script:
+    - "nvn test"

@@ -8,7 +8,7 @@ stages:
     - echo "Maven compile started"
     - "mvn compile"
 
-  test-job
+  test-job:
     stage: test
     script: 
     - "mvn test"
