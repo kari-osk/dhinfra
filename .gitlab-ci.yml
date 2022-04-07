@@ -11,4 +11,4 @@ stages:
   test-job:
     stage: test
     script: 
-    - "mvn
+    - "mvn test"
