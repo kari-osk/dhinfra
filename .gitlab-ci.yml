@@ -1,14 +1,31 @@
 stages:
-    - build
-    - test
+  - build
+  - test
+
+variables:
+  MAVEN_OPTS: -Dmaven.repo.local=.m2/repository
+
+cache:
+  paths:
+    - .m2/repository
+    - target
 
   build_job:
     stage: build
-    script: 
-    - echo "Maven compile started"
-    - "mvn compile"
+    script:
+      - echo "Maven compile started"
+      - 'mvn compile'
 
   test-job:
     stage: test
-    script: 
-    - "mvn test"
+    script:
+      - 'mvn test'
+
+package_job:
+  stage: package
+  artifacts:
+    paths:
+      - target/*.jar
+
+  script:
+    - 'mvn package'
